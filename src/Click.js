@@ -42,9 +42,9 @@ function Click() {
           enablePan={false}
           enableZoom={false}
         />
-        {/* {emotion == "Happy" ? <Happy/> :null }
-        {emotion == "Angry" ? <Angry/> :null } */}
-        <Combined/>
+        {emotion == "Happy" ? <Happy/> :null }
+        {emotion == "Angry" ? <Angry/> :null }
+        {/* <Combined/> */}
         
         {/* <mesh>
           <boxGeometry args={[2,2,2]}/>
