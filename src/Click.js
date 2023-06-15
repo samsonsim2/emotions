@@ -17,6 +17,7 @@ import { Suspense, useState, useRef } from 'react'
 import Angry from './components/Angry';
 import Happy from './components/Happy';
 import { Button,Box } from '@mui/material';
+import Combined from './components/Combined';
  
 function Click() {
 
@@ -41,8 +42,9 @@ function Click() {
           enablePan={false}
           enableZoom={false}
         />
-        {emotion == "Happy" ? <Happy/> :null }
-        {emotion == "Angry" ? <Angry/> :null }
+        {/* {emotion == "Happy" ? <Happy/> :null }
+        {emotion == "Angry" ? <Angry/> :null } */}
+        <Combined/>
         
         {/* <mesh>
           <boxGeometry args={[2,2,2]}/>

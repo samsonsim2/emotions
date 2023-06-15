@@ -3,6 +3,9 @@ import './App.css'
 import * as faceapi from 'face-api.js'
 import { Box } from '@mui/material'
  
+
+const videoHeight = 150
+const videoWidth = 200
 function Display({emotion,setEmotion}){
     console.log(emotion)
   const videoRef = useRef()
@@ -73,13 +76,13 @@ function Display({emotion,setEmotion}){
       // DRAW YOU FACE IN WEBCAM
       canvasRef.current.innerHtml = faceapi.createCanvasFromMedia(videoRef.current)
       faceapi.matchDimensions(canvasRef.current,{
-        width:940,
-        height:650
+        width:videoWidth,
+        height:videoHeight
       })
 
       const resized = faceapi.resizeResults(detections,{
-         width:940,
-        height:650
+        width:videoWidth,
+        height:videoHeight
       })
 
       faceapi.draw.drawDetections(canvasRef.current,resized)
@@ -90,25 +93,22 @@ function Display({emotion,setEmotion}){
     },1000)
   }
 
-  return (
+  return (<>
  
-    <Box sx={{border:2,  width:"fit-content",position:"absolute",top:0,left:0}}>
+  
 
+    <Box>
+  
+    <video  className="videoBox"  crossOrigin="anonymous" ref={videoRef}  height={videoHeight}  width={videoWidth} autoPlay></video>    
      
-    <Box sx={{border:2,borderColor:"red" ,position:"absolute",top:0}}>
-      <video sx={{objectFit:"fit-content"}}crossOrigin="anonymous" ref={videoRef} autoPlay></video>    
-     </Box>  
-
-    <Box sx={{ border:2, width:"100%",borderColor:"green",  position:"absolute",}}>
-    <canvas   ref={canvasRef}  />
+ 
+    <canvas  className="canvasElement" ref={canvasRef}  />
+   
     </Box>
-        
-     
-
-    </Box>
+ 
   
    
-    )
+    </>)
 
 }
 

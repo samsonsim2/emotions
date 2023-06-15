@@ -28,8 +28,10 @@ const Face = () => {
     
   
       <Box sx={{position:"relative",top:0,display:"flex",justifyContent:"center"}}>
+       
       <Display setEmotion={setEmotion} emotion={emotion}/>
-      <Typography sx={{position:"absolute",top:"200px"}}>current emotion:{emotion}</Typography>
+       
+      <Typography sx={{position:"absolute",top:"50px"}}>current emotion:{emotion}</Typography>
       {/* <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
       <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button> */}
   
