@@ -20,9 +20,11 @@ import Happy from './components/Happy';
 import { Button,Box, Typography } from '@mui/material';
 import Display from './Display';
 import { Neutral } from './components/Neutral';
+import Blob from './components/Blob';
 
 const Face = () => {
     const [emotion,setEmotion] = useState("Happy")
+    
     return (<>
      
     
@@ -48,9 +50,7 @@ const Face = () => {
             enablePan={false}
             enableZoom={true}
           />
-          {emotion == "happy" ? <Happy/> :null }
-          {emotion == "surprised" ? <Angry/> :null }
-          {emotion =="neutral" ? <Neutral/> :null }
+         <Blob/>
           
           
   

@@ -2,12 +2,13 @@ import {useRef,useEffect} from 'react'
 import './App.css'
 import * as faceapi from 'face-api.js'
 import { Box } from '@mui/material'
+import { useAppContext } from './context/appContext'
  
 
 const videoHeight = 150
 const videoWidth = 200
 function Display({emotion,setEmotion}){
-    console.log(emotion)
+     
   const videoRef = useRef()
   const canvasRef = useRef()
 
@@ -17,7 +18,7 @@ function Display({emotion,setEmotion}){
     videoRef && loadModels()
 
   },[])
-
+  const { measure,setMeasure} = useAppContext();
 
 
   // OPEN YOU FACE WEBCAM
@@ -64,14 +65,18 @@ function Display({emotion,setEmotion}){
       const detections = await faceapi.detectAllFaces(videoRef.current,
         new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
         
+       
         if(detections[0]){
-            const maxKey = findPropertyWithMaxValue(detections[0]?.expressions);
-        console.log(maxKey); // Output: prop3
+          
+        const maxKey = findPropertyWithMaxValue(detections[0]?.expressions);
+         
+        setMeasure({...detections[0].expressions})
+        // console.log(maxKey); // Output: prop3
+    
         setEmotion(maxKey)
 
         }
         
-        // console.log(Object.keys(detections[0]?.expressions))
 
       // DRAW YOU FACE IN WEBCAM
       canvasRef.current.innerHtml = faceapi.createCanvasFromMedia(videoRef.current)

@@ -22,8 +22,16 @@ import { Canvas } from '@react-three/fiber';
  
 function Shader() {
 
- 
+  let speed=0
+
+ const [noise,setNoise]=useState(0)
   return (<>
+
+
+<button onClick={()=>{
+setNoise(noise + 0.1)
+console.log(noise)
+ }}>speed</button>
  
      
     <div className='three-canvas-container'>
@@ -37,9 +45,10 @@ function Shader() {
           minPolarAngle={0}
           maxPolarAngle={Math.PI / 2}
           enablePan={false}
-          enableZoom={false}
+          enableZoom={true}
         />
-       <Blob/>
+       <Blob noise={noise}/>
+       
 
         {/* <mesh>
           <boxGeometry args={[2,2,2]}/>
