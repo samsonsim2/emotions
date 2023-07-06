@@ -12,7 +12,7 @@ export function Rigged(props) {
   },[])
   return (
     <group ref={group} {...props} dispose={null}>
-      <group scale={0.01} position={[0, -1, 0]}>
+      <group scale={0.01} position={[0, -1, 0]} rotation={[0,Math.PI , 0]}>
         <group
           name="Sweep"
           position={[24.648, 0, 58.81]}

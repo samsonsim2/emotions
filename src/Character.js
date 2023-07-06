@@ -21,6 +21,7 @@ import { Button,Box, Typography } from '@mui/material';
 import Display from './Display';
 import { Neutral } from './components/Neutral';
 import { Rigged } from './components/Rigged';
+import { Particles } from './components/Particles';
  
 const Character = () => {
     const [emotion,setEmotion] = useState("Happy")
@@ -44,16 +45,20 @@ const Character = () => {
           id='three-canvas-container'
         >
           <OrbitControls
+           minAzimuthAngle={-Math.PI / 5}
+           maxAzimuthAngle={Math.PI / 5}
+             
             minPolarAngle={0}
             maxPolarAngle={Math.PI / 2}
             enablePan={false}
             enableZoom={true}
           />
          <Rigged/>
+         {emotion == "surprised" ? <Particles/> :null }
           
           
   
-          <ambientLight intensity={0.5} />
+          <ambientLight intensity={0.8} />
           <directionalLight
             position={[10, 20, -5]}
             intensity={1}
