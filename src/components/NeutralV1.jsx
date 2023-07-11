@@ -4,7 +4,7 @@ import { useGLTF, useAnimations, MeshDiscardMaterial, MeshDistortMaterial } from
  
 export function NeutralV1(props) {
   const group = useRef();
-  const { nodes, materials, animations } = useGLTF("/models/revised/Neutral.gltf");
+  const { nodes, materials, animations } = useGLTF("/models/Revised/Neutral.gltf");
   const { actions,names } = useAnimations(animations, group);
 
   useEffect(()=>{
@@ -94,4 +94,4 @@ export function NeutralV1(props) {
   );
 }
 
-useGLTF.preload("/models/revised/Neutral.gltf");
+useGLTF.preload("/models/Revised/Neutral.gltf");
