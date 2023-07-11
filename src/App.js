@@ -7,6 +7,7 @@ import Shader from './Shader';
 import FaceControl from './FaceControl';
 import { AppProvider } from './context/appContext';
 import Character from './Character';
+import Final from './Final';
  
  
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
       <Route path="/face" element={<Face/>}/>
       <Route path="/shader" element={<FaceControl/>}/>
       <Route path="/character" element={<Character/>}/>
+      <Route path="/v1" element={<Final/>}/>
        
   </Routes>  
   </BrowserRouter>
