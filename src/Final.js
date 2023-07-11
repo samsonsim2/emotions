@@ -33,7 +33,7 @@ import { AngryV1 } from './components/AngryV1';
 import { FearV1 } from './components/FearV1';
 import { SurprisedParticles } from './components/SurprisedParticles';
 const Final= () => {
-    const [emotion,setEmotion] = useState("Happy")
+    const [emotion,setEmotion] = useState("Neutral")
     return (<>
 
    
@@ -43,9 +43,10 @@ const Final= () => {
       <Box sx={{position:"relative",top:0,display:"flex",justifyContent:"center"}}>
 
       <Box sx={{position:"absolute",bottom:"100px",display:"flex",justifyContent:"center" ,zIndex:"100"}}>
+      <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Neutral")} variant="contained">Neutral</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Sad")} variant="contained">Sad</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Neutral")} variant="contained">Neutral</Button>
+    
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Fearful")} variant="contained">Fearful</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Surprised")} variant="contained">Surprised</Button>
