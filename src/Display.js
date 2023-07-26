@@ -1,25 +1,30 @@
-import {useRef,useEffect} from 'react'
+import {useRef,useEffect, useState} from 'react'
 import './App.css'
 import * as faceapi from 'face-api.js'
-import { Box } from '@mui/material'
+import { Box, Typography } from '@mui/material'
 import { useAppContext } from './context/appContext'
  
 
-const videoHeight = 150
-const videoWidth = 200
-function Display({emotion,setEmotion}){
+const videoHeight = 225
+const videoWidth = 300
+function Display( ){
      
   const videoRef = useRef()
   const canvasRef = useRef()
+  const { measure,setMeasure,emotions,setEmotions,pageState,setPageState} = useAppContext();
+  const [test,setTest] = useState("home")
 
   // LOAD FROM USEEFFECT
   useEffect(()=>{
+     
+    
     startVideo()
     videoRef && loadModels()
+    
+    
 
-  },[])
-  const { measure,setMeasure} = useAppContext();
-
+  },[test])
+  
 
   // OPEN YOU FACE WEBCAM
   const startVideo = ()=>{
@@ -61,19 +66,44 @@ function Display({emotion,setEmotion}){
   }
 
   const faceMyDetect = ()=>{
+   
     setInterval(async()=>{
       const detections = await faceapi.detectAllFaces(videoRef.current,
         new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-        
-       
+          
         if(detections[0]){
           
         const maxKey = findPropertyWithMaxValue(detections[0]?.expressions);
          
         setMeasure({...detections[0].expressions})
         // console.log(maxKey); // Output: prop3
+
+        if (maxKey=="neutral" && test=="faceTracking"  ){
+          setEmotions("Meh")
+        }
+
+        if (maxKey=="happy" && test=="faceTracking" ){
+          setEmotions("Happy")
+        }
+
+        if (maxKey=="sad"  && test=="faceTracking" ){
+          setEmotions("Sad")
+        }
+
+        if (maxKey=="surprised"  && test=="faceTracking" ){
+          setEmotions("Surprised")
+        }
+
+        if (maxKey=="fearful" && test=="faceTracking" ){
+          setEmotions("Scared")
+        }
+
+        if (maxKey=="angry"&& test=="faceTracking" ){
+          setEmotions("Angry")
+        }
     
-        setEmotion(maxKey)
+    
+        
 
         }
         
@@ -98,16 +128,25 @@ function Display({emotion,setEmotion}){
     },1000)
   }
 
-  return (<>
- 
   
 
-    <Box>
+  return (<>
+
+  
+  
+
+    <Box  onClick={()=>{setPageState("faceTracking")
+  setTest("faceTracking")}} sx={{position:"absolute",top:"5%" ,right:"20%",cursor:"pointer" }} >
+    { test =="faceTracking" ? null:<Box sx={{ display:"flex",justifyContent:"center",alignItems:"center",position:"absolute" ,zIndex:"1000" ,background: "rgba(255, 255,255, 0.5)",height:"225px" ,width:"300px"  }} >
+      <Typography   fontSize={"30px"}>Or make a Face</Typography>
+    </Box>}
   
     <video  className="videoBox"  crossOrigin="anonymous" ref={videoRef}  height={videoHeight}  width={videoWidth} autoPlay></video>    
      
  
-    <canvas  className="canvasElement" ref={canvasRef}  />
+    <canvas  className="canvasElement" ref={canvasRef}   >
+ 
+    </canvas>
    
     </Box>
  

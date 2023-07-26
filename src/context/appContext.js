@@ -27,6 +27,8 @@ const AppProvider = ({ children }) => {
   }
   
 const [measure,setMeasure]=useState(initValues)
+const [emotions,setEmotions] = useState("Meh")
+const [pageState,setPageState] = useState("home")
  
 
  
@@ -35,7 +37,13 @@ const [measure,setMeasure]=useState(initValues)
     <AppContext.Provider
       value={{
         measure,
-        setMeasure
+        setMeasure,
+
+        emotions,
+        setEmotions,
+
+        pageState,
+        setPageState
        
         
       }}

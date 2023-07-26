@@ -10,7 +10,7 @@ export function Pedestal(props) {
   const { nodes, materials, animations } = useGLTF("/models/Revised/pedestal.gltf");
   const { actions } = useAnimations(animations, group);
   return (
-    <group ref={group} {...props} dispose={null} scale={0.01} position={[0,-1.1,0]}>
+    <group ref={group} {...props} dispose={null} scale={0.01} position={[0,-2.2,0]}>
       <group>
         <mesh
           name="Cylinder"

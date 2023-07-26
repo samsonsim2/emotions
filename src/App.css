@@ -7,7 +7,7 @@
 }
 
 .videoBox{
-  border:purple solid 2px;
+  /* border:purple solid 2px; */
   position:absolute;
   top:0;
   left:0;
@@ -15,7 +15,7 @@
 }
 
 .canvasElement{
-  border:green solid 2px;
+  /* border:green solid 2px; */
   position:absolute;
   top:0;
   left:0;

@@ -32,26 +32,39 @@ import { SurprisedV1 } from './components/SurprisedV1';
 import { AngryV1 } from './components/AngryV1';
 import { FearV1 } from './components/FearV1';
 import { SurprisedParticles } from './components/SurprisedParticles';
-const Final= () => {
-    const [emotion,setEmotion] = useState("Neutral")
+import { NeutralV2 } from './components/NeutralV2';
+import { HappyV2 } from './components/HappyV2';
+import { SadV2 } from './components/SadV2';
+import { FearV2 } from './components/FearV2';
+import { AngryV2 } from './components/AngryV2';
+import { SurprisedV2 } from './components/SurprisedV2';
+import { LoveV2 } from './components/LoveV2';
+import EmotionButtons from './components/EmotionButtons';
+import { useAppContext } from './context/appContext';
+ 
+const FinalV2= () => {
+
+  const {emotions,setEmotions,pageState,setPageState} = useAppContext()
+    // const [emotion,setEmotion] = useState("neutral")
+    const cameraRef = useRef(null)
     return (<>     
     
   
-      <Box sx={{position:"relative",top:0,display:"flex",justifyContent:"center"}}>
+      <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
 
-      <Box sx={{position:"absolute",bottom:"100px",display:"flex",justifyContent:"center" ,zIndex:"100"}}>
+      {/* <Box sx={{position:"absolute",bottom:"100px",display:"flex",justifyContent:"center" ,zIndex:"100"}}>
       <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Neutral")} variant="contained">Neutral</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Sad")} variant="contained">Sad</Button>
-    
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Fearful")} variant="contained">Fearful</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button>
+   <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Fearful")} variant="contained">Fearful</Button>    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button>
     <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Surprised")} variant="contained">Surprised</Button>
-    </Box>
-{/*        
-      <Display setEmotion={setEmotion} emotion={emotion}/> */}
+    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Love")} variant="contained">Love</Button>
+    </Box> */}
        
-      <Typography sx={{position:"absolute",top:"100px"}}>How are you feeling today?</Typography>
+      <Display  />
+      <EmotionButtons/>
+      {/* <Typography sx={{position:"absolute",top:"50px"}}>current emotion:{emotions}</Typography> */}
+      {/* <Typography sx={{position:"absolute",top:"50px"}}>{pageState}</Typography> */}
       {/* <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
       <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button> */}
   
@@ -62,25 +75,41 @@ const Final= () => {
           linear
           id='three-canvas-container'
         >
+         <OrthographicCamera
+        ref={cameraRef}
+        name='Camera'
+        makeDefault={true}
+        zoom={100}
+        far={100000}
+        near={-100000}
+        up={[0, 1, 0]}
+        position={[0, 0, 7]}
+        rotation={[-0.78, 1.1, 0.72]}
+        scale={1}
+      />
           <OrbitControls
-           minAzimuthAngle={-Math.PI / 5}
-           maxAzimuthAngle={Math.PI / 5}
+           minAzimuthAngle={-Math.PI / 6}
+           maxAzimuthAngle={Math.PI / 6}
              
-            minPolarAngle={0}
+            minPolarAngle={Math.PI / 2}
             maxPolarAngle={Math.PI / 2}
             enablePan={false}
-            enableZoom={true}
+            enableZoom={false}
+            
           />
 
-        {emotion=="Neutral"?<NeutralV1/> :null}
-        {emotion=="Happy"?<HappyV1/>:null}
-        {emotion=="Happy"? <HappyParticles/>:null}
-         {emotion=="Sad"?<SadV1/>:null}
-         {emotion=="Sad"?<SadParticles/>:null}
-         {emotion=="Surprised"?<SurprisedParticles/>:null}
-         {emotion=="Surprised"?<SurprisedV1/>:null}
-         {emotion=="Angry"?<AngryV1/>:null}
-         {emotion=="Fearful"?<FearV1/>:null}
+ 
+
+        {emotions=="Meh"?<NeutralV2/> :null}
+        {emotions=="Happy"?<HappyV2/>:null}
+    
+         {emotions=="Sad"?<SadV2/>:null}
+          
+         {emotions=="Love"?<LoveV2/>:null}
+         {emotions=="Surprised"?<SurprisedV2/>:null}
+         {emotions=="Angry"?<AngryV2/>:null}
+         {emotions=="Scared"?<FearV2/>:null}
+          
         <Pedestal/>
    
           
@@ -103,4 +132,4 @@ const Final= () => {
     );
 }
 
-export default Final
+export default FinalV2
