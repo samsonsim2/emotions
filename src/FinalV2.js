@@ -87,7 +87,7 @@ const FinalV2= () => {
         far={100000}
         near={-100000}
         up={[0, 1, 0]}
-        position={[10,30,10]}
+        position={[0,30,10]}
         rotation={[-0.78, 1.1, 0.72]}
         scale={1}
       />

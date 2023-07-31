@@ -11,6 +11,7 @@
     border-radius: 20px;
     cursor: pointer;
     z-index: 100000!important;
+    transition: 0.3s;
     
 }
 
@@ -28,11 +29,13 @@
     border-radius: 20px;
      
     z-index: 100000 ;
+
     
 }
 
 .landingButton:hover {
   background-color:#FF00C0!important;
+  transform: scale(1.1);;
 }
 
 .three-canvas-container {
