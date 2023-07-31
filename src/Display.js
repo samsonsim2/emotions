@@ -190,7 +190,7 @@ function Display( ){
      onClick={()=>{
     setPageState("buttons")
     setTest("buttons")
-    setEmotions("Meh") }}>
+   }}>
      <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>
         <ArrowLeftIcon   onClick={()=>{decrement()}} sx={{fontSize:"90px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowLeftIcon>  
         <Box sx={{alignSelf:"center"}}> Pick a feeling</Box>
