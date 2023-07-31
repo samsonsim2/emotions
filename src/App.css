@@ -34,7 +34,7 @@
 }
 
 .landingButton:hover {
-  background-color:#FF00C0!important;
+  background-color:#FF00C0 ;
   transform: scale(1.1);;
 }
 
