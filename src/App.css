@@ -1,3 +1,40 @@
+.landingButton
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 24px; font-style: normal;
+    font-variant: normal; 
+    font-weight: 500;
+    line-height: 26.4px; 
+    border:none;
+    background-color:#FF99E5;
+    padding:5px;
+    border-radius: 20px;
+    cursor: pointer;
+    z-index: 100000!important;
+    
+}
+
+.pickButton
+{
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-size: 24px; font-style: normal;
+    color:#FF00C0;
+    font-variant: normal; 
+    font-weight: 500;
+    line-height: 26.4px; 
+    border:none;
+    background-color:transparent;
+    padding:5px;
+    border-radius: 20px;
+     
+    z-index: 100000 ;
+    
+}
+
+.landingButton:hover {
+  background-color:#FF00C0!important;
+}
+
 .three-canvas-container {
   background-color: white;
   height: 100vh;
@@ -10,7 +47,13 @@
   /* border:purple solid 2px; */
   position:absolute;
   top:0;
+  bottom:0;
   left:0;
+  right:0;
+  margin:auto;
+  pointer-events: none;
+  
+   
  
 }
 
@@ -18,7 +61,12 @@
   /* border:green solid 2px; */
   position:absolute;
   top:0;
+  bottom:0;
   left:0;
+  right:0;
+  margin:auto;
+  pointer-events: none;
+ 
    
 
 }

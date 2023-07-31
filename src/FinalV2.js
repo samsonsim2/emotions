@@ -5,7 +5,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { useGLTF } from '@react-three/drei'
 import { Canvas } from '@react-three/fiber'
- 
+import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import {
   Environment,
   OrbitControls,
@@ -13,11 +14,11 @@ import {
 } from '@react-three/drei'
 import * as THREE from 'three'
 
-import { Suspense, useState, useRef } from 'react'
+import { Suspense, useState, useRef, useEffect } from 'react'
 import Angry from './components/Angry';
 import Happy from './components/Happy';
  
-import { Button,Box, Typography } from '@mui/material';
+import { Button,Box, Typography, Stack } from '@mui/material';
 import Display from './Display';
 import { Neutral } from './components/Neutral';
 import { Rigged } from './components/Rigged';
@@ -47,26 +48,29 @@ const FinalV2= () => {
   const {emotions,setEmotions,pageState,setPageState} = useAppContext()
     // const [emotion,setEmotion] = useState("neutral")
     const cameraRef = useRef(null)
+    // useEffect(()=>{
+    //   console.log(cameraRef.current.position)
+    // },[])
+  
     return (<>     
     
   
-      <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center"}}>
+    <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center",zIndex:"1000"}}>
 
-      {/* <Box sx={{position:"absolute",bottom:"100px",display:"flex",justifyContent:"center" ,zIndex:"100"}}>
-      <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Neutral")} variant="contained">Neutral</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Sad")} variant="contained">Sad</Button>
-   <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Fearful")} variant="contained">Fearful</Button>    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Surprised")} variant="contained">Surprised</Button>
-    <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Love")} variant="contained">Love</Button>
-    </Box> */}
-       
-      <Display  />
-      <EmotionButtons/>
-      {/* <Typography sx={{position:"absolute",top:"50px"}}>current emotion:{emotions}</Typography> */}
-      {/* <Typography sx={{position:"absolute",top:"50px"}}>{pageState}</Typography> */}
-      {/* <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Happy")} variant="contained">Happy</Button>
-      <Button sx={{padding:"10px",margin:"10px",backgroundColor:"black"}}onClick={()=>setEmotion("Angry")} variant="contained">Angry</Button> */}
+     
+    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"100px",display:"flex",justifyContent:"space-between"}}>
+{/*      
+    <EmotionButtons/> */}
+    
+    
+    <Display  />  
+    
+
+    </Stack>
+
+ 
+ 
+    
   
    <Box sx={{  height: "100vh", width: "100%"}}>
         <Canvas
@@ -83,7 +87,7 @@ const FinalV2= () => {
         far={100000}
         near={-100000}
         up={[0, 1, 0]}
-        position={[0, 0, 7]}
+        position={[10,30,10]}
         rotation={[-0.78, 1.1, 0.72]}
         scale={1}
       />
