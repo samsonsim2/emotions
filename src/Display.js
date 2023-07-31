@@ -215,7 +215,7 @@ function Display( ){
 
     <Box sx={{position:"absolute",right:0,marginRight:"100px" }}>
       
-    <button class="landingButton"  style={{background:pageState=="faceTracking"?"transparent":"#FF99E5",color:pageState=="faceTracking"?"transparent":"black" }} onClick={()=>{
+    <button class={pageState=="faceTracking"?"hideButton":"landingButton"}  onClick={()=>{
       setPageState("faceTracking")
       setTest("faceTracking")}}>
     <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>

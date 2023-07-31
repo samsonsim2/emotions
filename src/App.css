@@ -38,6 +38,13 @@
   transform: scale(1.1);;
 }
 
+.hideButton {
+  background-color:transparent ;
+  color:transparent;
+  border:0
+   
+}
+
 .three-canvas-container {
   background-color: white;
   height: 100vh;
