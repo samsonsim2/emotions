@@ -13,7 +13,7 @@ export function SadV2(props) {
   useEffect(()=>{
     console.log(actions)
     console.log(names)
-    actions[names[0]].reset().fadeIn(0.5).play()
+    actions[names[0]].reset().fadeIn().play()
   },[])
   return (
     <group ref={group} {...props} dispose={null} scale={0.01}>
@@ -26,7 +26,7 @@ export function SadV2(props) {
             geometry={nodes.Sadai.geometry}
             material={materials["Mat.2"]}
             position={[-1.02, 350.835, -0.726]}
-           ><meshStandardMaterial color={"black"}/></mesh>
+           >  <meshStandardMaterial color={"#F5F5F5"}/></mesh>
           <mesh
             name="Cloud"
             castShadow
@@ -129,7 +129,7 @@ export function SadV2(props) {
               geometry={nodes.Mouth.geometry}
               material={materials["Mat.2"]}
               position={[-2.055, 113.096, 127.227]}
-            />
+             ><meshStandardMaterial color="white"/></mesh>
             <mesh
               name="Ear_L"
               castShadow

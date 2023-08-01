@@ -9,16 +9,15 @@ export function HappyV2(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF("/models/RevisedV2/Happy.gltf");
   const { actions,names } = useAnimations(animations, group);
-
   useEffect(()=>{
     console.log(actions)
     console.log(names)
-    actions[names[0]].reset().fadeIn(0.5).play()
+    actions[names[0]].reset().fadeIn().play()
   },[])
   return (
     <group ref={group} {...props} dispose={null} scale={0.01}>
       <group>
-        <group name="Happy" position={[0.685, -100, 41.707]}>
+        <group name="Happy" position={[0.685,-100.287, 41.707]} >
           <group
             name="Null5"
             position={[-0.685, 92.414, -41.707]}
@@ -143,7 +142,7 @@ export function HappyV2(props) {
               skeleton={nodes.Tail_1.skeleton}
             />
           </group>
-          <group name="Body" position={[-0.685, -50, -41.707]}>
+          <group name="Body" position={[-0.685, 10, -41.707]}>
             <primitive object={nodes.HappyHip_R} />
             <primitive object={nodes.HappyHip_L} />
             <primitive object={nodes.HappyTail} />
@@ -154,8 +153,8 @@ export function HappyV2(props) {
             receiveShadow
             geometry={nodes.Body_1.geometry}
             material={materials["Mat.1"]}
-            position={[1.37, -50, -41.707]}
-            scale={[1.1, 0.9, 1.1]}
+            position={[1.37, 10, -41.707]}
+            scale={[0.9, 1.2, 1]}
           >
             <mesh
               name="Ear_L"
@@ -164,7 +163,7 @@ export function HappyV2(props) {
               geometry={nodes.Ear_L.geometry}
               material={materials["Mat.1"]}
               position={[34.08, 220.841, 0]}
-              rotation={[0, 0, 0.126]}
+              rotation={[0, 0, -0.087]}
             />
             <mesh
               name="Ear_R"
@@ -173,7 +172,7 @@ export function HappyV2(props) {
               geometry={nodes.Ear_R.geometry}
               material={materials["Mat.1"]}
               position={[-36.82, 220.841, 0]}
-              rotation={[0, 0, -0.126]}
+              rotation={[0, 0, 0.087]}
             />
             <mesh
               name="Mouth"
@@ -183,7 +182,7 @@ export function HappyV2(props) {
               material={materials["Mat.2"]}
               position={[-0.197, 88.88, 106.717]}
               rotation={[-0.099, 0.017, 0.024]}
-             ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
+             > <meshStandardMaterial color={"#F5F5F5"}/></mesh>
           </mesh>
         </group>
       </group>

@@ -9,21 +9,21 @@ export function LoveV2(props) {
   useEffect(()=>{
     console.log(actions)
     console.log(names)
-    actions[names[0]].reset().fadeIn(0.5).play()
+    actions[names[0]].reset().fadeIn().play()
   },[])
   return (
     <group ref={group} {...props} dispose={null} scale={0.01}>
       <group>
         <group name="Love" position={[-5.507, -180.395, 9.972]}>
-          <mesh
+        <mesh
             name="Extrude2"
             castShadow
             receiveShadow
             geometry={nodes.Extrude2.geometry}
             material={materials["Mat.1"]}
             position={[113.247, 368.531, 11.425]}
-            rotation={[-0.05, 0, -0.009]}
-            scale={0.332}
+            rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+            scale={0}
           />
           <mesh
             name="Extrude1"
@@ -33,7 +33,6 @@ export function LoveV2(props) {
             material={materials["Mat.1"]}
             position={[-70.841, 455.476, 7.189]}
             rotation={[-0.05, 0, -0.009]}
-            scale={0.67}
           />
           <mesh
             name="Extrude"
@@ -42,8 +41,7 @@ export function LoveV2(props) {
             geometry={nodes.Extrude.geometry}
             material={materials["Mat.1"]}
             position={[3.283, 312.955, 14.231]}
-            rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
-            scale={0}
+            scale={0.042}
           />
           <mesh
             name="Loveai"
@@ -68,7 +66,7 @@ export function LoveV2(props) {
             geometry={nodes.Body.geometry}
             material={materials["Mat.1"]}
             position={[5.507, -4.336, -14.591]}
-            rotation={[0, 0, -0.009]}
+            rotation={[0, 0, 0.017]}
             scale={25}
           >
             <mesh
@@ -76,37 +74,37 @@ export function LoveV2(props) {
               castShadow
               receiveShadow
               geometry={nodes.EyeR.geometry}
-               
+              material={materials["Mat.2"]}
               position={[-2.69, 9.062, 1.333]}
               rotation={[-0.05, 0, 0]}
-              scale={0.101}
+              scale={0.105}
              ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
             <mesh
               name="EyeL"
               castShadow
               receiveShadow
               geometry={nodes.EyeL.geometry}
-               
+              material={materials["Mat.2"]}
               position={[2.69, 9.062, 1.333]}
               rotation={[-0.05, 0, 0]}
-              scale={0.101}
-             ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
+              scale={0.105}
+              ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
             <mesh
               name="Mouth"
               castShadow
               receiveShadow
               geometry={nodes.Mouth.geometry}
-              
+              material={materials["Mat.2"]}
               position={[0, 9.383, 1.54]}
               rotation={[0, 0, -2.356]}
               scale={0.04}
-            ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
+             >  <meshStandardMaterial color={"#F5F5F5"}/></mesh>
             <mesh
               name="Cheeks"
               castShadow
               receiveShadow
               geometry={nodes.Cheeks.geometry}
-               
+              material={materials["Mat.2"]}
               position={[-1.322, 8.37, 0.809]}
               scale={0.04}
              ><meshStandardMaterial color={"#F5F5F5"}/></mesh>
@@ -117,12 +115,31 @@ export function LoveV2(props) {
               geometry={nodes.Tail.geometry}
               material={materials["Mat.1"]}
               position={[-0.066, 0.993, -0.28]}
-              rotation={[0, 0, 0.017]}
+              rotation={[0, 0, -0.035]}
               scale={0.04}
             />
             <primitive object={nodes.LoveHip_R} />
             <primitive object={nodes.LoveHip_L} />
           </mesh>
+          <mesh
+            name="Extrude3"
+            castShadow
+            receiveShadow
+            geometry={nodes.Extrude3.geometry}
+            material={materials["Mat.1"]}
+            position={[-181.841, 371.103, 11.425]}
+            rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+            scale={0}
+          />
+          <mesh
+            name="Extrude4"
+            castShadow
+            receiveShadow
+            geometry={nodes.Extrude4.geometry}
+            material={materials["Mat.1"]}
+            position={[82.565, 450.216, 14.231]}
+            scale={0.042}
+          />
         </group>
       </group>
     </group>

@@ -19,12 +19,24 @@ export function AngryV2(props) {
       <group ref={group} {...props} dispose={null} scale = {0.01}>
         <group>
         <group name="Angry" position={[0.121, -153.287, 10.379]}>
+        <group
+            name="Tail"
+            position={[-0.121, 42.287, -10.379]}
+            rotation={[0, 0.401, 0]}
+          >
+            <skinnedMesh
+              name="Tail_1"
+              geometry={nodes.Tail_1.geometry}
+              material={materials["Mat.1"]}
+              skeleton={nodes.Tail_1.skeleton}
+            />
+          </group>
           <mesh
             name="Angryai"
             castShadow
             receiveShadow
             geometry={nodes.Angryai.geometry}
-            material={nodes.Angryai.material}
+            material={materials["Mat.2"]}
             position={[-272.994, 86.765, -10.379]}
           />
           <group name="Legs" position={[0.603, 263.139, -10.379]}>
@@ -35,16 +47,8 @@ export function AngryV2(props) {
               skeleton={nodes.Legs_1.skeleton}
             />
           </group>
-          <group name="Null" position={[-0.121, 25.243, -10.379]}>
-            <mesh
-              name="Tail"
-              castShadow
-              receiveShadow
-              geometry={nodes.Tail.geometry}
-              material={materials["Mat.1"]}
-              position={[-5.803, 31.604, -14.08]}
-              rotation={[0, 0.775, 0.313]}
-            />
+          <group name="Null" position={[-0.121, 23.265, -10.379]}>
+            <primitive object={nodes.Joint2} />
             <primitive object={nodes.AngryHip_R} />
             <primitive object={nodes.AngryHip_L} />
             <mesh
