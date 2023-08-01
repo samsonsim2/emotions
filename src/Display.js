@@ -193,7 +193,7 @@ function Display( ){
    }}>
      <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>
         <ArrowLeftIcon   onClick={()=>{decrement()}} sx={{fontSize:"90px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowLeftIcon>  
-        <Box sx={{alignSelf:"center"}}> Pick a feeling</Box>
+        <Box sx={{alignSelf:"center",width:"200px"}}> {pageState=="buttons"?emotionsArray[count]: "Pick a feeling"}</Box>
        <ArrowRightIcon   onClick={()=>{increment()}}   sx={{ padding:"0px!important" ,fontSize:"90px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowRightIcon >
      </Stack>
      </button>:
