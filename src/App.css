@@ -1,11 +1,12 @@
 .landingButton
 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-family: "Helvetica", Arial, sans-serif; 
     font-size: 24px; font-style: normal;
     font-variant: normal; 
-    font-weight: 500;
+    font-weight: 1000;
     line-height: 26.4px; 
     border:none;
+    color: #282c34;
     background-color:#FF99E5;
     padding:5px;
     border-radius: 20px;
@@ -17,11 +18,11 @@
 
 .pickButton
 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
+    font-family: "Helvetica", Arial, sans-serif; 
     font-size: 24px; font-style: normal;
     color:#FF00C0;
     font-variant: normal; 
-    font-weight: 500;
+    font-weight: 1000;
     line-height: 26.4px; 
     border:none;
     background-color:transparent;
