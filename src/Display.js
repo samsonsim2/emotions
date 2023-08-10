@@ -18,7 +18,7 @@ function Display( ){
   const { measure,setMeasure,emotions,setEmotions,pageState,setPageState} = useAppContext();
   const [test,setTest] = useState("home")
 
-  const emotionsArray = ["Meh","Sad","Happy","Surprised","Angry","Scared","Love"]
+  const emotionsArray = ["Meh","Happy","Sad","Surprised","Angry","Scared","Love"]
  
   let [count,setCount] = useState(0)
 
@@ -119,10 +119,11 @@ function Display( ){
    
     const myInterval = 
     setInterval(async()=>{
+      
     
       const detections = await faceapi.detectAllFaces(videoRef.current,
         new faceapi.TinyFaceDetectorOptions()).withFaceLandmarks().withFaceExpressions()
-          
+        console.log(detections[0]?.expressions)
         if(detections[0] ){
           
         const maxKey = findPropertyWithMaxValue(detections[0]?.expressions);
@@ -130,13 +131,24 @@ function Display( ){
         setMeasure({...detections[0].expressions})
         // console.log(maxKey); // Output: prop3
 
-        if (maxKey=="neutral"  ){
+        if (maxKey=="neutral" ){
+          
           setEmotions("Meh")
         }
+      
 
-        if (maxKey=="happy"    ){
+        if (maxKey=="happy" ){
           setEmotions("Happy")
         }
+        
+        // if (maxKey=="happy" && detections[0]?.expressions.happy <0.5  ){
+        //   setEmotions("Love")
+        // }
+
+        if (maxKey=="neutral" && detections[0]?.expressions.neutral<0.95 ){
+          setEmotions("Love")
+        }
+
 
         if (maxKey=="sad"    ){
           setEmotions("Sad")

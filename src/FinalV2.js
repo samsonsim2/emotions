@@ -119,9 +119,9 @@ const FinalV2= () => {
           
           
   
-          <ambientLight intensity={1} />
+          <ambientLight intensity={0.97} />
           <directionalLight
-            position={[20, 40, -5]}
+            position={[20, 40, 10]}
             intensity={0.5}
             castShadow
           />
