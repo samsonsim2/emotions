@@ -7,8 +7,8 @@ import { useAppContext } from './context/appContext'
  
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-const videoHeight = 225
-const videoWidth = 300
+const videoHeight = 225/1.3
+const videoWidth = 300/1.3
 function Display( ){
 
   
@@ -198,42 +198,42 @@ function Display( ){
   return (<>
 
 {pageState=="buttons" ? 
-     <button class="pickButton" style={{left:0,marginLeft:"100px"}} 
+     <button class="pickButton" style={{top:0,left:0,marginLeft:"50px",top:0 }} 
      onClick={()=>{
     setPageState("buttons")
     setTest("buttons")
    }}>
      <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>
-        <ArrowLeftIcon   onClick={()=>{decrement()}} sx={{fontSize:"90px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowLeftIcon>  
-        <Box sx={{alignSelf:"center",width:"200px"}}> {pageState=="buttons"?emotionsArray[count]: "Pick a feeling"}</Box>
-       <ArrowRightIcon   onClick={()=>{increment()}}   sx={{ padding:"0px!important" ,fontSize:"90px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowRightIcon >
+        <ArrowLeftIcon   onClick={()=>{decrement()}} sx={{fontSize:"50px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowLeftIcon>  
+        <Box sx={{alignSelf:"center",width:"200px",fontSize:"20px"}}> {pageState=="buttons"?emotionsArray[count]: "Pick a feeling"}</Box>
+       <ArrowRightIcon   onClick={()=>{increment()}}   sx={{ padding:"0px!important" ,fontSize:"50px" ,color:"#FF00C0",cursor:"pointer"}}></ArrowRightIcon >
      </Stack>
      </button>:
     
-    <button class="landingButton" style={{left:0,marginLeft:"100px"}}
+    <button class="landingButton" style={{top:0,left:0,marginLeft:"50px"}}
      onClick={()=>{
       setPageState("buttons") 
     setTest("buttons")
     setEmotions("Meh")}}>
     <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>
-       <ArrowLeftIcon onClick={()=>{decrement()}}  sx={{fontSize:"90px" ,color:"transparent",cursor:"pointer"}}></ArrowLeftIcon>  
-       <Box sx={{alignSelf:"center"}}> Pick a feeling</Box>
-      <ArrowRightIcon  onClick={()=>{increment()}}  sx={{ fontSize:"90px" ,color:"transparent",cursor:"pointer"}}></ArrowRightIcon >
+       <ArrowLeftIcon onClick={()=>{decrement()}}  sx={{fontSize:"50px" ,color:"transparent",cursor:"pointer"}}></ArrowLeftIcon>  
+       <Box sx={{alignSelf:"center",fontSize:"20px"}}> Pick a feeling</Box>
+      <ArrowRightIcon  onClick={()=>{increment()}}  sx={{ fontSize:"50px" ,color:"transparent",cursor:"pointer"}}></ArrowRightIcon >
     </Stack>
     </button>}
 
   
 
 
-    <Box sx={{position:"absolute",right:0,marginRight:"100px" }}>
+    <Box sx={{position:"absolute",right:0,marginRight:"50px",top:0, }}>
       
     <button class={pageState=="faceTracking"?"hideButton":"landingButton"}  onClick={()=>{
       setPageState("faceTracking")
       setTest("faceTracking")}}>
     <Stack direction={"row"} sx={{display:"flex",alignContent:"center"}}>
-       <ArrowLeftIcon   sx={{fontSize:"90px" ,color:"transparent",cursor:"pointer"}}></ArrowLeftIcon>  
-       <Box sx={{alignSelf:"center"}}> Or make a face</Box>
-      <ArrowRightIcon   sx={{ fontSize:"90px" ,color:"transparent",cursor:"pointer"}}></ArrowRightIcon >
+       <ArrowLeftIcon   sx={{fontSize:"50px" ,color:"transparent",cursor:"pointer"}}></ArrowLeftIcon>  
+       <Box sx={{alignSelf:"center",fontSize:"20px"}}> Or make a face</Box>
+      <ArrowRightIcon   sx={{ fontSize:"50px" ,color:"transparent",cursor:"pointer"}}></ArrowRightIcon >
     </Stack>
     </button>
     <video   style={{display:pageState=="faceTracking"?"block":"none"}} className="videoBox"  crossOrigin="anonymous" ref={videoRef}  height={videoHeight}  width={videoWidth} autoPlay></video>    

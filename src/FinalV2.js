@@ -55,10 +55,10 @@ const FinalV2= () => {
     return (<>     
     
   
-    <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center",zIndex:"1000"}}>
+    <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center",zIndex:"1000" }}>
 
      
-    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"100px",display:"flex",justifyContent:"space-between"}}>
+    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"50px",display:"flex",justifyContent:"space-between"}}>
 {/*      
     <EmotionButtons/> */}
     
@@ -72,7 +72,7 @@ const FinalV2= () => {
  
     
   
-   <Box sx={{  height: "100vh", width: "100%"}}>
+   <Box sx={{  height: "100vh", width: "100%" }}>
         <Canvas
           shadows
           gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
@@ -83,7 +83,7 @@ const FinalV2= () => {
         ref={cameraRef}
         name='Camera'
         makeDefault={true}
-        zoom={100}
+        zoom={70}
         far={100000}
         near={-100000}
         up={[0, 1, 0]}
@@ -106,19 +106,14 @@ const FinalV2= () => {
 
         {emotions=="Meh"?<NeutralV2/> :null}
         {emotions=="Happy"?<HappyV2/>:null}
-    
-         {emotions=="Sad"?<SadV2/>:null}
-          
-         {emotions=="Love"?<LoveV2/>:null}
+        {emotions=="Sad"?<SadV2/>:null}
+        {emotions=="Love"?<LoveV2/>:null}
          {emotions=="Surprised"?<SurprisedV2/>:null}
          {emotions=="Angry"?<AngryV2/>:null}
          {emotions=="Scared"?<FearV2/>:null}
           
         <Pedestal/>
    
-          
-          
-  
           <ambientLight intensity={0.97} />
           <directionalLight
             position={[20, 40, 10]}

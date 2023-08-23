@@ -9,7 +9,7 @@
     color: #282c34;
     background-color:#FF99E5;
     padding:5px;
-    border-radius: 20px;
+    border-radius: 10px;
     cursor: pointer;
     z-index: 100000!important;
     transition: 0.3s;
@@ -27,7 +27,7 @@
     border:none;
     background-color:transparent;
     padding:5px;
-    border-radius: 20px;
+    border-radius: 10px;
      
     z-index: 100000 ;
 
