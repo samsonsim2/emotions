@@ -58,7 +58,7 @@ const FinalV2= () => {
     <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center",zIndex:"1000" }}>
 
      
-    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"50px",display:"flex",justifyContent:"space-between"}}>
+    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"75px",display:"flex",justifyContent:"space-between"}}>
 {/*      
     <EmotionButtons/> */}
     
