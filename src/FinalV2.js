@@ -55,10 +55,10 @@ const FinalV2= () => {
     return (<>     
     
   
-    <Box sx={{position:"relative",width:"100vw",top:0,display:"flex",justifyContent:"center",zIndex:"1000" }}>
+    <Box sx={{position:"relative",width:"100vw",  top:0,display:"flex",justifyContent:"center" ,zIndex:"1000" }}>
 
      
-    <Stack direction="row" sx={{zIndex:"1000",position:"absolute", width:"100%",top:"75px",display:"flex",justifyContent:"space-between"}}>
+    <Stack   sx={{  pointerEvents:"none",zIndex:"1000",position:"absolute",width:"95%",height:"90%",  top:20,display:"flex",flexDirection:{xs:"column-reverse",sm:"row"},alignItems:{xs:"center",sm:"flex-start"},justifyContent:"space-between"}}>
 {/*      
     <EmotionButtons/> */}
     

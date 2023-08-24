@@ -13,6 +13,10 @@
     cursor: pointer;
     z-index: 100000!important;
     transition: 0.3s;
+    height:fit-content;
+    pointer-events: all;
+  
+     
     
 }
 
@@ -28,21 +32,27 @@
     background-color:transparent;
     padding:5px;
     border-radius: 10px;
-     
+    height:fit-content;
     z-index: 100000 ;
+    pointer-events: all;
+     
+    
 
     
 }
 
 .landingButton:hover {
   background-color:#FF00C0 ;
-  transform: scale(1.1);;
+  transform: scale(1.1);
+  pointer-events: all;
+
 }
 
 .hideButton {
   background-color:transparent ;
   color:transparent;
-  border:0
+  border:0;
+  pointer-events: all;
    
 }
 
@@ -57,14 +67,12 @@
 .videoBox{
   /* border:purple solid 2px; */
   position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  top:0;  
+  
+  
   margin:auto;
   pointer-events: none;
   border-radius: 10px;
-  
    
  
 }
@@ -72,10 +80,7 @@
 .canvasElement{
   /* border:green solid 2px; */
   position:absolute;
-  top:0;
-  bottom:0;
-  left:0;
-  right:0;
+  top:0;      
   margin:auto;
   pointer-events: none;
  
