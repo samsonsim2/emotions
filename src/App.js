@@ -10,6 +10,7 @@ import Character from './Character';
 import Final from './Final';
 import CubeTest from './CubeTest';
 import FinalV2 from './FinalV2';
+import ScreenShot from './ScreenShot';
  
  
 const App = () => {
@@ -26,6 +27,7 @@ const App = () => {
       <Route path="/v1" element={<Final/>}/>
       <Route path="/v2" element={<FinalV2/>}/>
       <Route path="/cube" element={<CubeTest/>}/>
+      <Route path="/screenShot" element={<ScreenShot/>}/>
        
   </Routes>  
   </BrowserRouter>
